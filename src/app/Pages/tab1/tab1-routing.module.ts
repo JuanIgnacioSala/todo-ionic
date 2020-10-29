@@ -1,11 +1,16 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Tab1Page } from './tab1.page';
+import { AddPage } from '../add/add.page';
 
 const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },
+  {
+    path: 'add',
+    loadChildren: () => import('../add/add.module').then( m => m.AddPageModule)
   }
 ];
 
